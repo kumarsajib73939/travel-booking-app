@@ -1,0 +1,101 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <link rel="stylesheet" href="{% static 'css/styles.css' %}" />
+        <link
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+            rel="stylesheet"
+            integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+            crossorigin="anonymous"
+        />
+        <!-- Bootstrap Link -->
+
+        <script src="{% static 'js/search.js' %}"></script>
+        <script
+            src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+            crossorigin="anonymous"
+        ></script>
+
+        <!-- Font Awesome Cdn -->
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+        />
+        <!-- Font Awesome Cdn -->
+
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+        />
+        <!-- Google Fonts -->
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap"
+            rel="stylesheet"
+        />
+    </head>
+    <body>
+        <section class="book" id="book">
+            <div class="container">
+                <div class="main-text">
+                    <h1><span>B</span>ook</h1>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-6 py-3 py-md-0">
+                        <div class="card">
+                            <img
+                                src="{% static 'images/book-img.png' %}"
+                                alt=""
+                            />
+                        </div>
+                    </div>
+
+                    <div class="col-md-6 py-3 py-md-0">
+                        <form  method="post">
+                            {% csrf_token %}
+                            <input
+                                type="text"
+                                class="form-control"
+                                placeholder="Where To"
+                                name="where"
+                                required
+                            /><br />
+                            <input
+                                type="text"
+                                class="form-control"
+                                placeholder="How Many"
+                                name="arrivals"
+                                required
+                            /><br />
+                            <input
+                                type="date"
+                                class="form-control"
+                                placeholder="Arrivals"
+                                name="date"
+                                required
+                            /><br />
+                            <textarea
+                                class="form-control"
+                                rows="5"
+                                name="details"
+                                placeholder="Enter Your Name & Details"
+                            >
+</textarea
+                            ><br />
+                            <input
+                                type="submit"
+                                value="Book Now"
+                                class="submit"
+                            />
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </body>
+</html>
